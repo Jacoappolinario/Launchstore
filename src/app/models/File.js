@@ -7,12 +7,10 @@ module.exports = {
             INSERT INTO files (
                 name,
                 path,
-                product_id,
+                product_id
             ) VALUES ($1, $2, $3)
             RETURNING id
         `
-        data.price = data.price.replace(/\D/g,"")
-        
         const values = [
             filename,
             path,

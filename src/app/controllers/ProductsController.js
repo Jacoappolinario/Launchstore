@@ -41,7 +41,7 @@ module.exports = {
         const filesPromise = req.files.map(file => File.create({...file, product_id: productId}))
         await Promise.all(filesPromise)
 
-        return res.redirect(`/product/${productId}`)        
+        return res.redirect(`/products/${productId}/edit`)        
     },
     async edit(req, res) {
         let results = await Product.find(req.params.id)
@@ -52,10 +52,19 @@ module.exports = {
         product.old_price = formatPrice(product.old_price)
         product.price = formatPrice(product.price)
 
+        // get categories
         results = await Category.all()
         const categories = results.rows
 
-        return res.render("products/edit.njk", { product, categories })
+        // get images
+        results = await Product.files(product.id)
+        let files = results.rows
+        files = files.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        return res.render("products/edit.njk", { product, categories, files })
     },
     async put(req, res) {
         const keys = Object.keys(req.body)
