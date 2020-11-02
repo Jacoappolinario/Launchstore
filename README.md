@@ -10,9 +10,9 @@
 </h3>
 
 ## 🚀 Sobre
-Launchstore é um e-commerce parecido com o Mercado Livre, onde será possivel o usuario:
+Launchstore é um e-commerce semelhante ao Mercado Livre, onde será possivel o usuario:
 - 🙎🏾‍♂️ Criar uma conta
-- 🔨 Criar e gerenciar anuncios
+- 🔨 Criar e gerenciar anúncios
 - 🛒 Efetuar compras
 
 ## 👷🏾‍♂️ Como usar?
