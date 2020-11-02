@@ -27,13 +27,12 @@ $ git clone https://github.com/Jacoappolinario/Launchstore.git
 # Navegue até o repositório clonado:
 $ cd Launchstore
 
+# Baixe as dependências:
+$ npm install
 ```
 Adicione credenciais de acesso ao banco de dados no arquivo src / config / db.js.
 
 ```bash
-# Baixe as dependências:
-$ npm install
-
 # Divirta-se
 $ npm start
 ```
