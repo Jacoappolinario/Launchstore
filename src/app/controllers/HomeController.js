@@ -19,7 +19,7 @@ module.exports = {
 
         const productsPromise = products.map(async product => {
             product.img = await getImage(product.id)
-            product.old_price = formatPrice(product.old_price)
+            product.oldPrice = formatPrice(product.old_price)
             product.price = formatPrice(product.price)
             return product
         }).filter((product, index) => index > 2 ? false : true)

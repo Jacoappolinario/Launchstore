@@ -4,14 +4,15 @@
 <section class="shop container">
     <h2>Últimos Produtos</h2>
 
-    <div class="item">
+    <div class="items">
 
         {% for product in products %}
             <div class="product">
                 <div 
                     class="image"
-                    style="background: url({{ product.img if product.img else '//placehold.it/500x500?text=Produto sem imagem'}})"
+                    style="background-image: url({{ product.img if product.img else '//placehold.it/500x360'}})"
                 >
+                </div>
 
                 {% if product.oldPrice != product.price %}
                     <div class="old-price">{{ product.oldPrice }}</div>
@@ -19,8 +20,7 @@
                 <p>{{ product.price }}</p>
                 <h4>{{ product.name }}</h4>      
 
-                <a href="/product/{{product.id}}" class="button">Ver Produto</a>          
-                </div>
+                <a href="/products/{{product.id}}" class="button">Ver Produto</a>          
             </div>
         {% endfor %}
     </div>
