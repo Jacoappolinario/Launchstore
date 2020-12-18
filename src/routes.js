@@ -5,9 +5,15 @@ const multer = require('./app/middlewares/multer')
 const ProductController = require('./app/controllers/ProductsController')
 const ProductsController = require('./app/controllers/ProductsController')
 const HomeController = require('./app/controllers/HomeController')
+const SearchController = require('./app/controllers/SearchController')
 
+// Home
 routes.get('/', HomeController.index)
 
+// Search
+routes.get('/products/search', SearchController.index)
+
+// Products
 routes.get('/products/create', ProductController.create)
 routes.get('/products/:id', ProductsController.show)
 routes.get('/products/:id/edit', ProductController.edit)
@@ -20,5 +26,7 @@ routes.delete('/products', ProductController.delete)
 routes.get('/ads/create', function(req, res) {
     return res.redirect("/products/create")
 })
+
+
 
 module.exports = routes
