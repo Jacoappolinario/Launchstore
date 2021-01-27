@@ -7,7 +7,7 @@ module.exports = {
         ORDER BY updated_at DESC
         `)
     },
-    create(data, callback) {
+    create(data) {
         const query = `
             INSERT INTO products (
                 category_id,
