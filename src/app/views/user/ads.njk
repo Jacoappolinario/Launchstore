@@ -4,7 +4,7 @@
 {% block content %}
 
 
-{% call cards.render('Meus Anúcios', 'users-ads container') %}
+{% call cards.render('Meus Anúncios', 'users-ads container') %}
     <div class="items">
         {% for product in products %}
             <div class="item">
@@ -18,11 +18,11 @@
                     <div class="title">{{ product.name }}</div>
                     <div class="price">{{ product.formattedPrice }}</div>
                     <div class="published">Publicado em {{ product.formattedCreateAt }}</div>
-                </div>
 
-                <div class="actions">
+                    <div class="actions">
                     <a href="/products/{{product.id}}/edit">Editar</a>
                     <a href="/products/{{product.id}}">Ver</a>
+                </div>
                 </div>
             </div>
         {% endfor %}
